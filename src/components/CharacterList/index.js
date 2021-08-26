@@ -1,16 +1,25 @@
 import React, { useEffect, useState } from 'react';
-import charStyles from './chapterList.module.css';
+import charStyles from './characterList.module.css';
 import getCharacters from '../../service/getCharacter'
 
 export default function CharacterList() {
     const [characters, setCharactes] = useState([])
+    const [page, setPage] = useState(1)
 
     useEffect(function () {
-        getCharacters(ch => ch)
+        getCharacters(page)
             .then(ch => {
                 setCharactes(ch)
             })
-    }, [])
+    }, [page])
+
+    const handlePageNext = () => {
+        setPage(page + 1)
+    }
+
+    const handlePagePrev = () => {
+        setPage(page - 1)
+    }
 
     return (
         <>
@@ -19,8 +28,7 @@ export default function CharacterList() {
                     return <div className={charStyles.character}>
                         <h3>{ch.name}</h3>
                         <img className={charStyles.image} alt={ch.name} src={ch.image} />
-                        <div className={charStyles.data}>
-
+                        <div key={ch.id} className={charStyles.dataChar}>
                             <p>{ch.alias}</p>
                             <p>{ch.affiliation}</p>
                             <p>{ch.gender}</p>
@@ -29,6 +37,13 @@ export default function CharacterList() {
                     </div>
                 })}
             </div>
+
+            <div className={charStyles.buttons}>
+                <button type="submit" value={page} onClick={handlePagePrev}>Anterior</button>
+                <button type="submit" value={page} onClick={handlePageNext}>Siguiente</button>
+            </div>
+
+
 
         </>
     )
