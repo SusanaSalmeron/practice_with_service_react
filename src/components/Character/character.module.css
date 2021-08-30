@@ -1,0 +1,78 @@
+
+/* .container{
+    display: grid;
+    grid-template-columns: repeat(3,minmax(100px,3fr));
+    min-height: 100vh;
+    text-align: center;
+} */
+
+.characterAlive{
+    border: 2px solid green;
+    border-radius: 10px;
+    margin: 3em 2em;
+    width: auto;
+}
+
+.characterDead{
+    border: 2px solid grey;
+    border-radius: 10px;
+    margin: 3em 2em;
+    width: auto;
+
+}
+
+.characterUnknown {
+    border: 2px solid purple;
+    border-radius: 10px;
+    margin: 3em 2em;
+    width: auto;
+}
+
+.characterImp {
+    border: 2px solid blue;
+    border-radius: 10px;
+    margin: 3em 2em;
+    width: auto;
+}
+
+.characterDis{
+    border: 2px solid lightcoral;
+    border-radius: 10px;
+    margin: 3em 2em;
+    width: auto;
+}
+
+.characterArr{
+    border: 2px solid lightseagreen;
+    border-radius: 10px;
+    margin: 3em 2em;
+    width: auto;
+}
+
+.characterActive{
+    border: 2px solid darkred;
+    border-radius: 10px;
+    margin: 3em 2em;
+    width: auto;
+}
+
+.dataChar{
+    text-align: left;
+    padding:0 1em; 
+}
+
+.character h3{
+    text-align: center;
+    color:darkmagenta
+}
+
+
+.image{
+    width: 50%;
+    text-align: center;
+    margin: 2em;
+}
+
+
+
+

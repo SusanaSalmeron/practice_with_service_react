@@ -1,5 +1,6 @@
 import './App.css';
-import ChapterList from './components/ChapterList';
+import CharacterList from './components/CharacterList';
+import CharacterDetail from './components/CharacterDetail';
 import {
   BrowserRouter as Router,
   Route,
@@ -11,7 +12,10 @@ function App() {
       <Router>
         <Route
           exact path="/characters"
-          component={ChapterList} />
+          component={CharacterList} />
+        <Route
+          exact path="/characters/:id/detail"
+          component={CharacterDetail} />
       </Router>
 
     </div>
